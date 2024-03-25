@@ -21,3 +21,9 @@ docker run -it --rm python-java-dev
 java -jar causal-cmd-1.12.0-jar-with-dependencies.jar --help
 
 ```
+
+## Using container with vscode
+
+You can use the container to write and run code using vscode.
+
+
