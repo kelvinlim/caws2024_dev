@@ -1,6 +1,6 @@
 # caws2024_dev
 
-Has python3.10, openjdk-18-jdk, jpype
+Has python3.11, openjdk-18-jdk, jpype
 causal-cmd and tetrad
 
 To build the container
@@ -27,3 +27,22 @@ java -jar causal-cmd-1.12.0-jar-with-dependencies.jar --help
 You can use the container to write and run code using vscode.
 
 
+## tetrad gui
+
+This works fine under windows.  In vscode terminal, 
+```
+cd /app
+java -jar  tetrad-gui-7.6.3-launch.jar 
+```
+
+On Mac, tetrad windows comes up but after moving mouse the window turns black making it hard to visualize anything.
+
+This is a known issue for many years for the M1 Mac.
+https://github.com/XQuartz/XQuartz/issues/31
+
+Recommend setting some options for display
+
+This works for M1 Mac
+```
+java -Dsun.java2d.xrender=false -Dsun.java2d.pmoffscreen=false -jar tetrad-gui-7.6.3-launch.jar
+```
