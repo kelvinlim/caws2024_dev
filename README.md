@@ -46,3 +46,19 @@ This works for M1 Mac
 ```
 java -Dsun.java2d.xrender=false -Dsun.java2d.pmoffscreen=false -jar tetrad-gui-7.6.3-launch.jar
 ```
+
+## git crlf conversion problem
+To turn this off:
+git config --global core.safecrlf false
+
+## configuring container with docker on mac and windows
+
+1. Install Docker Desktop https://www.docker.com/products/docker-desktop/
+2. Start up docker
+3. Vscode installs:
+   1. remote package
+   2. containers?
+4. Select the Blue connection button in lower left corner.
+5. select "Add dev Container Configuration Files"
+5. Select "Add configuration to user data folder"
+6. Select "From Dockerfile"
