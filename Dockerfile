@@ -5,7 +5,7 @@ FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get install -y python3.11 openjdk-18-jdk
 
-RUN apt-get install -y vim python3-pip wget git
+RUN apt-get install -y vim python3-pip wget git dos2unix
 
 # install jpype
 RUN pip install JPype1
