@@ -11,6 +11,7 @@ RUN apt-get install -y vim python3-pip wget git dos2unix
 RUN pip install JPype1
 
 # install R
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt install -y --no-install-recommends r-base r-base-dev
 
 # Set JAVA_HOME environment variable

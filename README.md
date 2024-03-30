@@ -81,3 +81,15 @@ Current (20240330) ubuntu 22 Rstudio https://download1.rstudio.org/electron/jamm
 wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.12.1-402-amd64.deb
 apt install -f rstudio-2023.12.1-402-amd64.deb
 ```
+
+## building container for upload to hub.docker.com
+
+```
+docker build -t kelvinolim/caws2024:latest .
+
+docker login
+
+docker push kelvinolim/caws2024:latest
+
+
+```
