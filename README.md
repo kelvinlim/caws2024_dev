@@ -55,10 +55,29 @@ git config --global core.safecrlf false
 
 1. Install Docker Desktop https://www.docker.com/products/docker-desktop/
 2. Start up docker
-3. Vscode installs:
-   1. remote package
-   2. containers?
+3. Vscode extensions:
+   1. remote development for containers
+   2. python
+   3. java
+   4. docker
+   5. How to have a configuration file for this?
+      1. Can be placed into  devcontainers.json file
 4. Select the Blue connection button in lower left corner.
 5. select "Add dev Container Configuration Files"
-5. Select "Add configuration to user data folder"
-6. Select "From Dockerfile"
+6. Select "Add configuration to user data folder"
+7. Select "From Dockerfile"
+8. Don't select additional options, click on blue OK box.
+
+To rebuild a container
+Use the following command (View/Command Palette)
+DevContainers:Rebuild Without Cache and Reopen in Container
+
+## Installing R
+
+I
+Current (20240330) ubuntu 22 Rstudio https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.12.1-402-amd64.deb
+
+```
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.12.1-402-amd64.deb
+apt install -f rstudio-2023.12.1-402-amd64.deb
+```

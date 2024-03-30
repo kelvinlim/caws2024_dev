@@ -10,6 +10,9 @@ RUN apt-get install -y vim python3-pip wget git dos2unix
 # install jpype
 RUN pip install JPype1
 
+# install R
+RUN apt install -y --no-install-recommends r-base r-base-dev
+
 # Set JAVA_HOME environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
 
