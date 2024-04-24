@@ -7,6 +7,13 @@ RUN apt-get update && \
 
 RUN apt-get install -y vim python3-pip wget git dos2unix
 
+# install vscode server
+# see https://stackoverflow.com/questions/63354237/how-to-install-vs-code-extensions-in-a-dockerfile
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+# install vscode extensions
+# RUN EXT_LIST="redhat.vscode-yaml ms-python.python" && \
+#     for EXT in $EXT_LIST; do code-server --install-extension $EXT; done
 # install jpype
 RUN pip install JPype1
 
