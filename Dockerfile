@@ -5,15 +5,22 @@ FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get install -y python3.11 openjdk-18-jdk
 
-RUN apt-get install -y vim python3-pip wget git dos2unix
+RUN apt-get install -y vim python3-pip wget git dos2unix 
+#RUN apt-get curl
 
 # install vscode server
 # see https://stackoverflow.com/questions/63354237/how-to-install-vs-code-extensions-in-a-dockerfile
-RUN curl -fsSL https://code-server.dev/install.sh | sh
+#RUN curl -fsSL https://code-server.dev/install.sh | sh
 
-# install vscode extensions
-# RUN EXT_LIST="redhat.vscode-yaml ms-python.python" && \
+# To have systemd start code-server now and restart on boot:
+# RUN systemctl enable --now code-server@$USER
+
+# Install VS Code extensions
+#RUN code-server --install-extension redhat.vscode-yaml --install-extension ms-python.python
+
+# RUN EXT_LIST="ms-python.python" && \
 #     for EXT in $EXT_LIST; do code-server --install-extension $EXT; done
+
 # install jpype
 RUN pip install JPype1
 
@@ -31,7 +38,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
 WORKDIR /app
 
 # get the tetrad version
-RUN wget https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.3/tetrad-gui-7.6.3-launch.jar
+RUN wget https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.3/tetrad-gui-7.6.4-launch.jar
 
 # get causal-cmd
 RUN wget https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/causal-cmd/1.12.0/causal-cmd-1.12.0-jar-with-dependencies.jar
