@@ -48,11 +48,11 @@ WORKDIR /caws2024
 RUN git clone https://github.com/cmu-phil/py-tetrad.git
 
 # copy the day directories to working directory
-ADD Day1 /caws2024
-ADD Day2 /caws2024
-ADD Day3 /caws2024
-ADD Day4 /caws2024
-ADD Day5 /caws2024
+ADD Day1 /caws2024/Day1
+ADD Day2 /caws2024/Day2
+ADD Day3 /caws2024/Day3
+ADD Day4 /caws2024/Day4
+ADD Day5 /caws2024/Day5
 
 
 # Copy your code into the container
