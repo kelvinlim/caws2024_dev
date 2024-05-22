@@ -6,3 +6,5 @@ java -Dsun.java2d.xrender=false -Dsun.java2d.pmoffscreen=false -jar /caws2024/bi
 exit 0
 
 
+
+
