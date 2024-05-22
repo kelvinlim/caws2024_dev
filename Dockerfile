@@ -35,20 +35,33 @@ ENV JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
 # ...
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /caws2024/bin
 
 # get the tetrad version
-RUN wget https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.3/tetrad-gui-7.6.4-launch.jar
+RUN wget https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.4/tetrad-gui-7.6.4-launch.jar
 
 # get causal-cmd
 RUN wget https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/causal-cmd/1.12.0/causal-cmd-1.12.0-jar-with-dependencies.jar
 
 # get the pytetrad 
+WORKDIR /caws2024
 RUN git clone https://github.com/cmu-phil/py-tetrad.git
 
-# Copy your code into the container
-COPY . /app
+# copy the day directories to working directory
+ADD Day1 /caws2024
+ADD Day2 /caws2024
+ADD Day3 /caws2024
+ADD Day4 /caws2024
+ADD Day5 /caws2024
 
-# Specify the default command to run (e.g., start your Python app)
-#CMD ["python3.11", "your_python_script.py"]
+
+# Copy your code into the container
+#RUN mkdir /caws2024/bin
+COPY run_tetrad.sh /caws2024/bin
+# add this to path
+ENV PATH=/caws2024/bin:$PATH
+
+# set home directory
+ENV HOME=/caws2024
+
 
