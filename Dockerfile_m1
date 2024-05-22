@@ -6,7 +6,15 @@ RUN apt-get update && \
     apt-get install -y python3.11 openjdk-18-jdk
 
 RUN apt-get install -y vim python3-pip wget git 
+
+# default architecture is amd64
+ARG ARCH=amd64
+
+# Install dos2unix only if not on arm64
 # dos2unix # error on m1
+RUN if [ "$ARCH" != "arm64" ]; then \
+    apt-get install -y dos2unix; \
+  fi
 
 #RUN apt-get curl
 
@@ -91,4 +99,9 @@ ENV PATH=/caws2024/bin:$PATH
 
 # set home directory
 ENV HOME=/caws2024
+
+# change the home for root to be /caws2024
+# this insures that tetrad opens the /caws2024 directory
+RUN sed -i 's/\/root/\/caws2024/g' /etc/passwd
+
 
