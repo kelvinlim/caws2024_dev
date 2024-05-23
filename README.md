@@ -88,10 +88,10 @@ apt install -f rstudio-2023.12.1-402-amd64.deb
 
 ```
 for arm
-docker build -f Dockerfile_m1 -t kelvinolim/caws2024_m1:latest --build-arg ARCH=arm64 .
+docker build -f Dockerfile -t kelvinolim/caws2024_m1:latest --build-arg ARCH=arm64 .
 
 for amd64
-docker build -f Dockerfile_m1 -t kelvinolim/caws2024:latest .
+docker build -f Dockerfile -t kelvinolim/caws2024:latest .
 
 docker login
 
