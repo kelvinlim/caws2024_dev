@@ -104,4 +104,7 @@ ENV HOME=/caws2024
 # this insures that tetrad opens the /caws2024 directory
 RUN sed -i 's/\/root/\/caws2024/g' /etc/passwd
 
+# add a directory for MyStuff so that a local directory can be mounted here
+RUN mkdir /caws2024/MyStuff
 
+RUN pip install pandas
