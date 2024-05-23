@@ -91,7 +91,7 @@ for arm
 docker build -f Dockerfile_m1 -t kelvinolim/caws2024_m1:latest --build-arg ARCH=arm64 .
 
 for amd64
-docker build -f Dockerfile_m1 -t kelvinolim/caws2024:latest --build-arg ARCH=amd64 .
+docker build -f Dockerfile_m1 -t kelvinolim/caws2024:latest .
 
 docker login
 
